@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto final</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Aqui importe los colores y fuentes que estan en el figma porque no estaban directamente disponibles en tailwind-->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "azulOscuro": '#000218',
+              "rojoBoton": "#E74040",
+              "textoCajas": "#737373",
+              "heroes": "#252B42",
+              "footer": "#323030",
+            },
+            fontFamily: {
+              "roboto": ["Roboto", "sans-serif"],
+              "montserrat": ["Montserrat", "sans-serif"],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-azulOscuro font-montserrat">
+    <!-- Para ajustar a pantallas mas grandes cambio la grid-->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div class="col-span-1 lg:col-span-2 bg-azulOscuro p-8 lg:p-12 my-10 lg:my-20">
+        <img class="w-72 lg:w-96 mx-auto lg:mx-0" src="img/Marvel.png" alt="Logo de Marvel" />
+        <p class="text-white text-5xl lg:text-9xl py-20 lg:py-44 font-bold text-center lg:text-left">Thanos Infinity Gauntlet Action Figure</p>
+        <span class="text-white text-3xl lg:text-5xl pb-8 lg:pb-20 block text-center lg:text-left">Marvel Merchandise</span>
+        <div class="flex flex-col lg:flex-row items-center lg:items-start mt-8 lg:mt-44 space-y-4 lg:space-y-0 lg:space-x-8">
+          <a href="informacion.html"><button class="text-white bg-rojoBoton text-3xl lg:text-6xl py-6 lg:py-10 rounded-md px-16 lg:px-32">Shop</button></a>
+          <a href="tienda.html"><button class="text-rojoBoton border-4 border-rojoBoton py-6 lg:py-10 text-3xl lg:text-6xl rounded-md px-12 lg:px-24">Add to Cart</button></a>
+        </div>
+      </div>
+
+      <div class="col-span-1 lg:col-span-2 my-auto justify-center ">
+        <!-- El gradiente de la imagen lo hice con css porque tailwind no tiene una opcion directa para hacer un gradiente radial, el otro gradiente para el pedestal del guantelete si esta hecho con tailwind, en algunas resoluciones no queda
+        completamente centrado pero principalmente esta hecho para mi resolucion que es 2560 x 1440-->
+        <div id="gradiente" class="flex justify-center h-[26rem] lg:h-[75%] "><img class="h-full object-cover relative z-10" src="img/Gauntlet.png" alt="Guantelete de Thanos" /></div>
+        
+        <div class="relative bg-gradient-to-b from-[#FFFFFF1A] from-10% to-[#FFFFFF] to-100% w-[15rem] lg:w-[50%] h-7 lg:h-14 rounded-[50%] -translate-y-4 lg:-translate-y-8 mx-auto lg:left-10 "></div>
+      </div>
+
+      <div class="col-span-1 lg:col-span-4 bg-[#e1e1e8] justify-center p-8 lg:p-28">
+        <h1 class="text-4xl lg:text-6xl text-heroes font-bold px-10 lg:px-20">Our Iconic Heroes</h1>
+        <!-- Ajustamos para pantallas mas pequeñas, por eso para las mas grandes pongo el nowrap para que se vea como en el diseño de figma-->
+        <div class="flex flex-wrap justify-center lg:flex-nowrap">
+          <div class="bg-white shadow-2xl p-10 lg:p-20 m-4 lg:m-16 w-72 lg:w-auto">
+            <img class="rounded-full w-32 lg:w-52 h-32 lg:h-52 object-cover " src="img/Ironman.png" alt="Iron man" />
+            <span class="text-heroes text-2xl lg:text-3xl font-bold block mt-4 lg:mt-8">Iron Man</span>
+            <hr class="border-rojoBoton my-2 lg:my-4" width="25%" />
+            <p class="text-textoCajas text-lg lg:text-2xl ">
+              Tony Stark, a billionaire genius, uses his advanced Iron Man suit to protect the world with unparalleled intelligence.
+            </p>
+          </div>
+
+          <div class="bg-white shadow-2xl p-10 lg:p-20 m-4 lg:m-16 w-72 lg:w-auto">
+            <img class="rounded-full w-32 lg:w-52 h-32 lg:h-52 object-cover " src="img/Thor.jpg" alt="Thor" />
+            <span class="text-heroes text-2xl lg:text-3xl font-bold block mt-4 lg:mt-8">Thor</span>
+            <hr class="border-rojoBoton my-2 lg:my-4 " width="25%" />
+            <p class="text-textoCajas text-lg lg:text-2xl ">
+              Thor, the mighty God of Thunder, wields his hammer Mjolnir to defend the Nine Realms with divine strength and honor.
+            </p>
+          </div>
+
+          <div class="bg-white shadow-2xl p-10 lg:p-20 m-4 lg:m-16 w-72 lg:w-auto">
+            <img class="rounded-full w-32 lg:w-52 h-32 lg:h-52 object-cover " src="img/Blackwidow.jpg" alt="Black widow" />
+            <span class="text-heroes text-2xl lg:text-3xl font-bold block mt-4 lg:mt-8">Black Widow</span>
+            <hr class="border-rojoBoton my-2 lg:my-4 " width="25%" />
+            <p class="text-textoCajas text-lg lg:text-2xl ">
+              Natasha Romanoff, the Black Widow, combines exceptional espionage and combat skills to face any threat with bravery.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-black col-span-1 lg:col-span-4 p-8 lg:p-24">
+        <h1 class="text-white text-center text-4xl lg:text-8xl font-bold font-roboto">Marvel's Partner Brands</h1>
+        <h2 class="text-white text-center text-2xl lg:text-6xl font-medium font-roboto mt-4 lg:mt-8">I can do this all day</h2>
+        <div class="flex flex-wrap justify-center mt-8 lg:mt-24">
+          <img class="w-20 lg:w-60 h-20 lg:h-60 m-4" src="img/Epic.png" alt="Logo Epic Games">
+          <img class="w-20 lg:w-60 h-20 lg:h-60 m-4" src="img/Disney.png" alt="Logo Disney+">
+          <img class="w-20 lg:w-60 h-20 lg:h-60 m-4" src="img/Mccdonalds.png" alt="Logo McDonald's">
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-footer py-4 lg:py-8 px-8 lg:px-20 flex flex-col lg:flex-row justify-between items-center">
+      <div class="text-white font-bold text-center lg:text-left"> Made With Love By Frontend All Right Reserved </div>
+      <div class="mt-4 lg:mt-0 flex space-x-4">
+        <i class="bi bi-facebook text-white text-3xl"></i>
+        <i class="bi bi-instagram text-white text-3xl"></i>
+        <i class="bi bi-twitter text-white text-3xl"></i>
+      </div>
+    </footer>
+  </body>
+</html>

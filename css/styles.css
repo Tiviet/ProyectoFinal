@@ -1,0 +1,27 @@
+#gradiente {
+
+    background-image: 
+    radial-gradient(circle, rgba(0, 2, 24, 0),rgba(0, 2, 24, 1)),url('/img/Efectogalaxia.png');
+    background-size: 100% 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+
+/*Unica propiedad de display oculto que tengo que poner en css sin tailwind para que no me genere conflicto con el carrito*/
+.oculto{
+  display: none;
+}
+
+/* Clip-path inicial para monitores grandes*/
+#forma {
+    clip-path: polygon(36% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  
+/* Cambio para pantallas mas pequeñas*/
+@media (max-width: 768px) {
+#forma {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+  

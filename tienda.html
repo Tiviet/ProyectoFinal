@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              azulOscuro: "#000218",
+              rojoBoton: "#E74040",
+              textoCajas: "#737373",
+              fondoTarjeta: "#D9D9D9",
+              footer: "#323030",
+            },
+            fontFamily: {
+              montserrat: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="flex justify-between sm:mx-4 md:mx-8 lg:mx-16 xl:mx-28">
+      <img class="w-48 md:w-64 lg:w-96" src="img/Marvel.png" alt="Logo de Marvel" />
+
+<!-- En el apartado del carrito de compra en el contador de productos intente hacerlo responsive pero es lo unico que no pude configurar completamente responsive-->
+      <div class="p-10 relative">
+        <div class="containerIcon">
+          <i class="bi bi-bag-fill text-4xl md:text-6xl lg:text-7xl p-4 md:p-10 hover:cursor-pointer"></i>
+          <div class="contadorProductos absolute right-[5rem] bg-white text-black flex justify-center items-center rounded-[50%] z-10 text-3xl w-9 top-[6rem] shadow-xl"><span id="contadorProductos">0</span></div>
+        </div>
+        
+        <div class="contenedorProductos absolute right-0 w-[35rem]  bg-white shadow-xl rounded-lg hidden p-10">
+          <div class="columnaProductos oculto">
+            <div class="carritoProductos flex p-8 justify-between items-cente">
+              <div class="informacionProductos flex justify-between flex-1 text-4xl border-b-2 border-gray-200 py-3">
+                <span class="cantidadProductos "></span>
+                  <p class="tituloCarrito "></p>
+                  <span class="precioCarrito mx-3 font-semibold"></span>
+                  <i class="bi bi-x-lg text-4xl relative iconoEliminar"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="totalCarrito flex justify-center items-center p-5 gap-5 text-4xl oculto">
+            <h3>Total:</h3>
+            <span class="pagoTotal text-4xl font-semibold"></span>
+          </div>
+          <p class="carritoVacio text-3xl text-center p-10">No hay productos en el carrito</p>
+        </div>
+      </div>
+      
+    </header>
+    <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-16 lg:mb-32 sm:mx-4 md:mx-8 lg:mx-16 xl:mx-28 font-semibold">
+      <a href="informacion.html"><i class="bi bi-arrow-left"></i> Back </a>
+    </div>
+
+    <div class="contenedorGeneral grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-20 sm:mx-4 md:mx-8 lg:mx-16 xl:mx-28 justify-between text-center mb-16 sm:mb-24 lg:mb-36 font-montserrat">
+      
+      <div class="shadow-md text-black w-full pb-8 sm:pb-12 md:pb-16">
+        <div class="h-96 sm:h-[32rem] md:h-[36rem] lg:h-[40rem] bg-fondoTarjeta py-8 flex justify-center">
+          <img class="h-full object-cover" src="img/Gauntlet.png" alt="Guantelete producto"/>
+        </div>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-2 sm:py-3 px-3 sm:px-5 font-semibold flex">Guante de Thanos</h3>
+        <h4 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl py-2 sm:py-3 px-3 sm:px-5 flex">$20</h4>
+        <button class="text-white bg-rojoBoton text-lg sm:text-xl md:text-2xl lg:text-4xl py-4 sm:py-5 px-6 sm:px-8 lg:px-32 rounded-md shadow-md shadow-rojoBoton agregarCarrito">Add to Cart</button>
+      </div>
+      
+      <div class="shadow-md text-black w-full pb-8 sm:pb-12 md:pb-16">
+        <div class="h-96 sm:h-[32rem] md:h-[36rem] lg:h-[40rem] bg-fondoTarjeta py-8 flex justify-center">
+          <img class="h-full object-cover" src="img/producto1.png" alt="Wolverine Funko"/>
+        </div>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-2 sm:py-3 px-3 sm:px-5 font-semibold flex">Wolverine</h3>
+        <h4 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl py-2 sm:py-3 px-3 sm:px-5 flex">$26</h4>
+        <button class="text-white bg-rojoBoton text-lg sm:text-xl md:text-2xl lg:text-4xl py-4 sm:py-5 px-6 sm:px-8 lg:px-32 rounded-md shadow-md shadow-rojoBoton agregarCarrito">Add to Cart</button>
+      </div>
+
+      <div class="shadow-md text-black w-full pb-8 sm:pb-12 md:pb-16">
+        <div class="h-96 sm:h-[32rem] md:h-[36rem] lg:h-[40rem] bg-fondoTarjeta py-8 flex justify-center">
+          <img class="h-full object-cover" src="img/producto2.png" alt="Spiderman Funko"/>
+        </div>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-2 sm:py-3 px-3 sm:px-5 font-semibold flex">Spider-Man</h3>
+        <h4 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl py-2 sm:py-3 px-3 sm:px-5 flex">$26</h4>
+        <button class="text-white bg-rojoBoton text-lg sm:text-xl md:text-2xl lg:text-4xl py-4 sm:py-5 px-6 sm:px-8 lg:px-32 rounded-md shadow-md shadow-rojoBoton agregarCarrito">Add to Cart</button>
+      </div>
+
+      <div class="shadow-md text-black w-full pb-8 sm:pb-12 md:pb-16">
+        <div class="h-96 sm:h-[32rem] md:h-[36rem] lg:h-[40rem] bg-fondoTarjeta py-8 flex justify-center">
+          <img class="h-full object-cover" src="img/producto3.png" alt="Deadpool Funko"/>
+        </div>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-2 sm:py-3 px-3 sm:px-5 font-semibold flex">Deadpool</h3>
+        <h4 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl py-2 sm:py-3 px-3 sm:px-5 flex">$26</h4>
+        <button class="text-white bg-rojoBoton text-lg sm:text-xl md:text-2xl lg:text-4xl py-4 sm:py-5 px-6 sm:px-8 lg:px-32 rounded-md shadow-md shadow-rojoBoton agregarCarrito">Add to Cart</button>
+      </div>
+
+      <div class="shadow-md text-black w-full pb-8 sm:pb-12 md:pb-16">
+        <div class="h-96 sm:h-[32rem] md:h-[36rem] lg:h-[40rem] bg-fondoTarjeta py-8 flex justify-center">
+          <img class="h-full object-cover" src="img/producto4.png" alt="Black Panther Lego"/>
+        </div>
+        <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-2 sm:py-3 px-3 sm:px-5 font-semibold flex">Black Panther</h3>
+        <h4 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl py-2 sm:py-3 px-3 sm:px-5 flex">$26</h4>
+        <button class="text-white bg-rojoBoton text-lg sm:text-xl md:text-2xl lg:text-4xl py-4 sm:py-5 px-6 sm:px-8 lg:px-32 rounded-md shadow-md shadow-rojoBoton agregarCarrito||1                      ">Add to Cart</button>
+      </div>
+      
+    </div>
+
+    <footer class="bg-footer py-8 px-4 sm:px-8 md:px-20 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+      <div class="text-white font-bold mb-4 sm:mb-0"> Made With Love By Frontend All Right Reserved </div>
+      <div>
+        <i class="bi bi-facebook text-white text-2xl md:text-3xl mr-2 sm:mr-4"></i>
+        <i class="bi bi-instagram text-white text-2xl md:text-3xl mr-2 sm:mr-4"></i>
+        <i class="bi bi-twitter text-white text-2xl md:text-3xl mr-2 sm:mr-4"></i>
+      </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

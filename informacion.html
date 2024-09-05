@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muestra de producto</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                "azulOscuro": '#000218',
+                "rojoBoton":"#E74040",
+                "textoTitulo": "#1F1235",
+                "footer":"#323030",
+              },
+              fontFamily: {
+                "openSans": ["Open Sans", "sans-serif"],
+                "lato": ["Lato", "sans-serif"],
+              }
+            }
+          }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-textoTitulo">
+    <div class="flex flex-col lg:flex-row">
+        <div class="lg:w-2/3 p-8 lg:p-32">
+            <a href="landing.html"><div class="text-2xl lg:text-4xl mb-16 lg:mb-32"><i class="bi bi-arrow-left"></i> Back</div></a>
+            <h1 class="text-4xl lg:text-8xl font-bold pb-5 font-lato">Thanos Infinity Gauntlet <br> Action Figure</h1>
+            <h2 class="text-2xl lg:text-5xl pb-5 font-openSans">Marvel Merchandise</h2>
+            <div class="text-xl lg:text-4xl flex pb-5 font-lato">
+                <i class="bi bi-star-fill mr-2 lg:mr-5 text-yellow-300"></i>
+                <i class="bi bi-star-fill mr-2 lg:mr-5 text-yellow-300"></i>
+                <i class="bi bi-star-fill mr-2 lg:mr-5 text-yellow-300"></i>
+                <i class="bi bi-star-fill mr-2 lg:mr-5 text-yellow-300"></i>
+                <i class="bi bi-star-fill mr-2 lg:mr-5 text-gray-500"></i>
+                <h4 class="text-lg lg:text-2xl">157 Reviews</h4>
+            </div>
+            <!--En esta parte hice el "menu de navegacion" que aparece para cambiar entre la informacion del producto junto con la animacion de hover -->
+            <ul class="list-none flex flex-wrap text-xl lg:text-7xl pb-5 font-openSans">
+                <li class="relative group">About <span class="absolute left-0 bottom-0 h-[2px] lg:h-[4px] w-0 bg-textoTitulo transition-all duration-500 group-hover:w-full"></span></li>
+                <li class="mx-12 lg:mx-28 relative group">Specifications <span class="absolute left-0 bottom-0 h-[2px] lg:h-[4px] w-0 bg-textoTitulo transition-all duration-500 group-hover:w-full"></span></li>
+                <li class="relative group">Reviews <span class="absolute left-0 bottom-0 h-[2px] lg:h-[4px] w-0 bg-textoTitulo transition-all duration-500 group-hover:w-full"></span></li>
+            </ul>
+            <p class="text-lg lg:text-4xl leading-tight pb-8 font-openSans">Bring one of the most powerful weapons in the Marvel Universe to life! <br> With this premium Infinity Gauntlet Articulated Electronic Fist from the Marvel Legends Series, lift up the power of the Infinity Stones 
+            and <br> imagine taking control of the galaxy with the notorious gauntlet worn by <br> the supreme being, Thanos.</p>
+            <h2 class="w-full text-5xl lg:text-9xl font-bold pb-5 font-lato">$149.98</h2> 
+            <div class="h-20 lg:h-30 w-40 lg:w-60 border-black text-2xl lg:text-5xl border-2 py-2 border-double rounded my-5 font-openSans">Qnty - 1 +</div>
+            <h3 class="w-full my-5 text-2xl lg:text-4xl font-openSans pb-11">Subtotal - $149.98</h3>
+            <a href="tienda.html"><button class="bg-rojoBoton py-5 lg:py-10 px-16 lg:px-32 text-2xl lg:text-6xl text-white font-lato shadow-md shadow-rojoBoton">Add to Cart</button></a>
+        </div>
+
+        <!-- Aqui hice la forma del fondo con css normal porque no vi muy clara la opcion con tailwind para usar clip-path-->
+        <div id="forma" class="bg-azulOscuro lg:w-[40%] w-full flex items-center justify-center relative mt-10 lg:mt-0">
+            <div class="relative">
+                <i class="bi bi-heart text-white text-3xl lg:text-6xl absolute left-full -top-20 lg:-top-36"></i>
+                <img class="w-40 lg:w-80 relative z-10" src="img/Gauntlet.png" alt="Guantelete de Thanos" /> 
+                <div class="absolute bg-gradient-to-b from-[#FFFFFF1A] from-10% to-[#FFFFFF] to-100% w-[15rem] lg:w-[30rem] h-7 lg:h-14 rounded-[50%] -translate-y-4 lg:-translate-y-8 -translate-x-7 lg:-translate-x-14"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
